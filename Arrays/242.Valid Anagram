@@ -1,0 +1,25 @@
+Given two strings s and t, return true if t is an 
+anagram of s, and false otherwise.
+
+Example 1:
+Input: s = "anagram", t = "nagaram"
+Output: true
+
+Example 2:
+Input: s = "rat", t = "car"
+Output: false
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+       String sortStringS = sortString(s);
+       String sortStringT = sortString(t);
+
+       return sortStringS.equals(sortStringT); 
+    }
+
+    public String sortString(String str){
+        char sortStr[] = str.toCharArray();
+        Arrays.sort(sortStr);
+        return new String(sortStr);
+    }
+}
